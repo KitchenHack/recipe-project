@@ -18,9 +18,25 @@ router.get('/addRecipe', (req, res) => {
 
 
 //see shopping list for chosen recipe
-router.get('/shopping-list', (req, res) => {
-  res.render('shopping-list')
-}); 
+//router.get('/-list', (req, res) => {
+ // res.render('shopping-list')
+//}); 
+
+// router.use((req, res, next) => {
+//   console.log(req.user)
+//   if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
+//     next(); // ==> go to the next route ---
+//   } else {                          //    |
+//     res.redirect("/login");         //    |
+//   }                                 //    |
+// }); // ------------------------------------                                
+// //     | 
+// //     V
+router.get("/shopping-list", (req, res) => {
+  console.log(req.user)
+  if(req.user){res.render("shopping-list");}
+  else{  res.redirect("/auth/login")}
+});
 
 router.get('/:recipeId', (req, res, next) => {
   const recipeId = req.params.recipeId; 
@@ -31,6 +47,23 @@ router.get('/:recipeId', (req, res, next) => {
     console.log(err); 
   })
 })
+
+// router.use((req, res, next) => {
+//   console.log("tim is handsome")
+//   if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
+//     next(); // ==> go to the next route ---
+//   } else {                          //    |
+//     res.redirect("/login");         //    |
+//   }                                 //    |
+// }); // ------------------------------------                                
+// //     | 
+// //     V
+// router.get("/shopping-list", (req, res) => {
+//   res.render("shopping-list");
+// });
+
+
+
 
 
 module.exports = router;

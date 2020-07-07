@@ -93,12 +93,12 @@ const recipes=[
   } 
 ]; 
 
-// Recipe.create(recipes)
-// .then(recipes => {
-//   console.log(`Success! Added ${recipes.length} recipes to the database`); 
-//   mongoose.connect.close(); 
-// }).catch(err => {
-//   console.log(err); 
-// }); 
+ Recipe.create(recipes)
+ .then(recipes => {
+   console.log(`Success! Added ${recipes.length} recipes to the database`); 
+   mongoose.connect.close(); 
+ }).catch(err => {
+   console.log(err); 
+ }); 
 
 

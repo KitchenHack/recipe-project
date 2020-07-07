@@ -19,6 +19,12 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const User = require("./models/User");
 const Recipe = require('./models/Recipe'); 
+
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
     
 
 mongoose
@@ -62,7 +68,12 @@ passport.use(new LocalStrategy((username, password, next) => {
   });
 }));
 
+// Passport github strategy setup
 
+
+
+
+        
 
 
 // Middleware Setup
