@@ -38,11 +38,7 @@ router.get("/shopping-list", (req, res) => {
   else{  res.redirect("/auth/login")}
 });
 
-router.get("/addToCookbook", (req, res) => {
-  console.log(req.user)
-  if(req.user){res.render("addToCookbook");}
-  else{  res.redirect("/auth/login")}
-});
+
 
 router.get('/:recipeId', (req, res, next) => {
   const recipeId = req.params.recipeId; 
