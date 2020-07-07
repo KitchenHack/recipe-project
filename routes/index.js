@@ -4,9 +4,10 @@ const router  = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
+  console.log('this is the user?', req.user);
   const user = req.user;
   Recipe.find().then(recipesFromDB => {
-    res.render('index', {recipeList: recipesFromDB});
+    res.render('index', {recipeList: recipesFromDB, user: user});
   })
   console.log(user);
 });
@@ -33,8 +34,9 @@ router.get('/addRecipe', (req, res) => {
 // //     | 
 // //     V
 router.get("/shopping-list", (req, res) => {
+  const user = req.user;
   console.log(req.user)
-  if(req.user){res.render("shopping-list");}
+  if(req.user){res.render("shopping-list",{user});}
   else{  res.redirect("/auth/login")}
 });
 
@@ -42,9 +44,10 @@ router.get("/shopping-list", (req, res) => {
 
 router.get('/:recipeId', (req, res, next) => {
   const recipeId = req.params.recipeId; 
+  const user = req.user;
   Recipe.findById(recipeId).then(recipesFromDB => {
     console.log(recipesFromDB); 
-    res.render('recipeDetails', {recipe: recipesFromDB}); 
+    res.render('recipeDetails',  {recipe: recipesFromDB,user}); 
   }).catch(err => {
     console.log(err); 
   })

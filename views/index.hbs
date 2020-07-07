@@ -1,8 +1,11 @@
+
+
 <br>
-<a href="/shopping-list">See your shopping list</a>
+{{#if user}}<a href="/shopping-list">See your shopping list</a>{{/if}}
 
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<h1>hello {{user.username}}</h1>
 
 
 <h2>All Recipes</h2>

@@ -10,8 +10,14 @@ const bcryptSalt = 10;
 
 
 router.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
+ res.render("auth/login", { "message": req.flash("error") });
 });
+
+// router.get("/login", (req, res) => {
+//   console.log(req.user)
+//   if(document.getElementById("login-btn").hidden = false){res.render("auth/login");}
+//   else{  document.getElementById("login-btn").hidden = true}
+// });
 
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/",
