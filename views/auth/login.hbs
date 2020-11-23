@@ -1,66 +1,50 @@
-
-<section class="login">
-
-  <div id="iconsandstuff">
-
-
-    <div class="container">
-    <img class="rounded-circle" style="width:20%" src="/images/search-icon.jpeg" rel="search icon"> 
-    <h3>Find a recipe you like</h3>
-    </div>
-    <br>
-
-    <div class="container">
-    <img class="rounded-circle" style="width:20%" src="/images/list-icon.jpeg" rel="search icon">
-    <h3>Add ingredients to your list</h3>
-    </div>
-    <br>
-
-    <div class="container">
-    <img class="rounded-circle" style="width:20%" src="/images/shopping-icon.jpeg" rel="search icon">
-    <h3>Go shopping!</h3>
-    </div>
-    <br>
-    </div>
+<section class="login" "card-overlay">
 
 
 
 
-  </div>
+
+
+
 
   <div class="loginforms">
     <br>
-    <h3>Login</h3>
+    {{!-- <h3>Login</h3> --}}
     <br><br><br>
-    <form class="login-box" action="/auth/login" method="POST" id="form-container"> 
-    <label for="username">Username</label><br>
-    <input id="username" type="text" name="username" placeholder="JonSnow">
 
-    <br><br>
 
-    <label for="password">Password</label> <br>
-    <input id="password" type="password" name="password" placeholder="Your password">
-    <br>
-    {{#if message }}
+    <form class="login-box" action="/auth/login" method="POST" id="form-container">
+
+      <h2 class="main-title">Kitchen Hack</h2>
+
+      <label class="username" for="username">Username</label><br>
+      <input class="username" id="username" type="text" name="username" placeholder="Username">
+
+      <br><br>
+
+      <label class="password" for="password">Password</label> <br>
+      <input class="password" id="password" type="password" name="password" placeholder="Password">
+      <br>
+      {{#if message }}
       <div class="error-message">{{ message }}</div>
-    {{/if}}
+      {{/if}}
 
-  <br>
-    <button id ="login-btn" class="btn btn-light">Login</button>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+      <br>
+      <button class="login-btn">Login</button>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
-    <p class="account-message">
-      Don't have an account yet? <br>
-      <a href="/auth/signup">Signup</a>
-    </p>
+      <p class="account-message">
+        Don't have an account yet?
+        <a href="/auth/signup">Sign up!</a>
+      </p>
     </form>
   </div>
 
@@ -126,4 +110,3 @@
 
 
 </div> --}}
-

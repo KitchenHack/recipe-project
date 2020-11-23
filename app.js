@@ -25,6 +25,10 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const User = require("./models/User");
 const Recipe = require('./models/Recipe'); 
+
+const feather = require('feather-icons')
+
+
     
 
 mongoose
@@ -43,6 +47,12 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+
+
+
+
+
+
 
 passport.serializeUser((user, cb) => {
   cb(null, user._id);
