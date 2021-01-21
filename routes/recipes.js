@@ -1,3 +1,13 @@
+// global.window = {document: {createElementNS: () => {return {};} }};
+
+// const domino = require('domino');
+// import { readFileSync } from 'fs';
+// const DIST_FOLDER = join(process.cwd(), 'dist');
+// const template = readFileSync(join(DIST_FOLDER, 'browser', 'index.html')).toString();
+// const winObj = domino.createWindow(template);
+// global['window'] = winObj;
+// global['document'] = winObj.document;
+
 const express = require('express'); 
 const passport = require('passport'); 
 const router = express.Router(); 
@@ -5,6 +15,7 @@ const User = require('../models/User');
 const Recipe = require('../models/Recipe'); 
 const mongoose = require('mongoose'); 
 const ensureLogin = require("connect-ensure-login");
+// const swiped = require('swiped'); 
 
 //when I want to render the page from the nav bar
 router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
@@ -39,21 +50,22 @@ router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
   })
 }); 
 
-router.get('/ingredients/remove/:ingredient', (req, res) => {
-  const ingr=req.params.ingredient; 
-  const user=req.user._id; 
 
-  console.log(`${ingr} removed for user ${user}.`); 
+// router.get('/ingredients/remove/:ingredient', (req, res) => {
+//   const ingr=req.params.ingredient; 
+//   const user=req.user._id; 
 
-  User.findByIdAndUpdate(
-    user, 
-    { $pull: {"shoppingList": {name:ingr}}}
-  ).then(() => {
-    res.redirect('/shoppingList')
-  }).catch(err => {
-    console.log(err)
-  })
-}); 
+//   console.log(`${ingr} removed for user ${user}.`); 
+
+//   User.findByIdAndUpdate(
+//     user, 
+//     { $pull: {"shoppingList": {name:ingr}}}
+//   ).then(() => {
+//     res.redirect('/shoppingList')
+//   }).catch(err => {
+//     console.log(err)
+//   })
+// }); 
 
 
 

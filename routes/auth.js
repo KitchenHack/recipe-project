@@ -67,10 +67,10 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.get("/logout", (req, res) => {
+router.get("/login", (req, res) => {
   req.logout();
   console.log('user is logged out')
-  res.render("auth/logout");
+  res.render("auth/login");
 });
 
 //change

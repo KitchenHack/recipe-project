@@ -1,45 +1,54 @@
-<div class="list">
-<h2>Your shopping list</h2>
+<div class="container">
+  <div class="row">
+    <div class="col">
 
-<form action="/shoppingList/update" method="POST">
-  
-  {{#each list}}
-  <div>
-  <p>
-  <input type="number" value="{{this.quantity}}" name="quantity">{{this.measure}} {{this.name}}
-  <input name="measure" value="{{this.measure}}" type="hidden" >
-  <input name="name" value="{{this.name}}" type="hidden" >
-  <a href="/ingredients/remove/{{this.name}}">X</a>
-  </p>
+{{!-- <div class="full-page">
+
+<div class="recipe-item-page"> --}}
+
+  <div class="to-add-item">
+
+    <form action="/shoppingList/updateWithAdditionalItem" method="POST">
+
+      <button class="the-add-item-button" type="submit">+</button>
+      <input class="add-item-form" type="text" name="name" placeholder="Add item" required>
+
+    </form>
+
   </div>
-  {{/each}}
-  <button type="submit" class="btn btn-dark">Update</button>
-</form>
+
+  <div class="list">
+
+    <form action="/shoppingList/update" method="POST">
+
+      {{#each list}}
+
+        <p class="the-list-ingredient">
+
+            {{this.quantity}}
+
+            {{this.measure}}
+
+            {{this.name}}
+
+            
+            <a class="delete-this" href="/ingredients/remove/{{this.name}}">✓</a>
+
+            <a class="delete-this" href="/ingredients/remove/{{this.name}}">X</a>
+       
+        </p>
+
+      {{/each}}
+
+    </form>
+
+  </div>
+
+{{!-- </div>
+
+</div> --}}
+
+
+  </div>
+  </div>
 </div>
-
-<br>
-
-<div>
-  <p>Add addtional items to your list:</p>
-  <form action="/shoppingList/updateWithAdditionalItem" method="POST">
-  <input type="number" name="quantity" placeholder="0" required>
-
-  {{!-- dropdown menue --}}
-  {{!-- <input type="text" name="measure" placeholder="g/pieces/etc."> --}}
-  <select id="measure" name="measure">
-    <option value="g">g</option>
-    <option value="ml">ml</option>
-    <option value="pieces">piece/s</option>
-    <option value="cup">cup</option>
-    <option value="tbsp">tbsp</option>
-    <option value="tsp">tsp</option>
-    <option value="other">other</option>
-  </select>
-
-
-  <input type="text" name="name" placeholder="item" required> <br> <br>
-  <button type="submit" class="btn btn-dark">Add item</button>
-
-  </form>
-</div>
-

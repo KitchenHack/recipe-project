@@ -39,6 +39,34 @@ router.get("/allRecipes", ensureLogin.ensureLoggedIn(), (req, res) => {
   }); 
 }); 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.get('/addRecipe', ensureLogin.ensureLoggedIn(), (req, res) => {
   const user=req.user; 
   User.find().then(usersFromDB => {
@@ -85,6 +113,8 @@ router.get('/allRecipes/:recipeId', (req, res, next) => {
     console.log(err); 
   })
 }); 
+
+
 
 
 module.exports = router;

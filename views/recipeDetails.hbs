@@ -1,26 +1,109 @@
-<h2>Recipe Details</h2>
+{{!-- <h2>Recipe Details</h2> --}}
 
-<a href="/allRecipes">Go back to overview</a>
+{{!-- <a href="/allRecipes">Go back to overview</a> --}}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+{{!-- <div class="recipe-details-page"> --}}
 
 <form action="/shoppingList" method="POST">
 
-{{#with recipe}}
-<h3 >{{title}}</h3>
-<p>Duration: {{duration}} minutes in total</p>
-  <ul>
+    {{!-- <div class="recipe-details-page-elements"> --}}
 
-    {{#each ingredients}}
-    <li>
-        <input type="text" name="ingredient" value="{{this.quantity}} {{this.measure}} {{this.name}}"> 
-    </li>
-    {{/each}}
-  </ul>
-<p>Here's how to do it: {{description}}</p>
-{{!-- <p><img src="" alt="image"></p> --}}
-{{/with}}
+    {{#with recipe}}
+
+    <h2 >{{title}}</h2>
+
+    <img class="title-img img-fluid" src="{{this.image}}" alt="image">
+
+    {{!-- <p><img src="{{this.image}}" alt="image"></p>  --}}
+
+   <hr> 
+
+   
+    
+  
+  
+    {{!-- <div class="rowrow"> --}}
+
+    {{!-- <div class="the-duration">
+
+    <h3>Duration</h3>
+
+    <br>
+
+    <p> {{duration}}  min</p>
+
+    </div>
+
+    <br>
+
+    <hr> --}}
+
+    {{!-- <div class="about-recipe"> --}}
+
+    <ul class="each-item">
+
+    <h3>Ingredients</h3>
+
+        {{#each ingredients}}
+
+        <li>
+
+             <input type="text" name="ingredient" value="{{this.quantity}} {{this.measure}} {{this.name}}"> 
+    
+        </li>
+
+        {{/each}}
+
+    </ul>
+
+    <br>
+
+   
+
+    <button type="submit" class="add-to-the-list">Add</button>
+
+    {{!-- </div> --}}
+
+    
+
+  
+
+    <br>
+  
+  
+    {{!-- </div> --}}
+
+    
+
+    <br>
+   
+
+   
+
+    
+
+    <h3>Here's how to do it:</h3>
+
+    <p> {{description}} </p>
+    
+    {{/with}}
+
+   
+    <br>
+
+    <hr>
 
 
-<button type="submit" class="btn btn-dark">Add the ingredients to shopping list</button>
+    {{!-- </div> --}}
 
 </form>
 
+{{!-- </div> --}}
+
+ </div>
+  </div>
+</div>

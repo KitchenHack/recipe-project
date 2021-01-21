@@ -1,4 +1,13 @@
-<section class="login" "card-overlay">
+<div class="container-fluid front-page next">
+  <div class="row front-page">
+    <div class="col front-page">
+
+
+
+
+
+      <section class="login" "card-overlay" "front-page"
+        style="padding-left: 0; padding-right: 0 margin-left: 0 margin-right: 0">
 
 
 
@@ -7,48 +16,51 @@
 
 
 
-  <div class="loginforms">
-    <br>
-    {{!-- <h3>Login</h3> --}}
-    <br><br><br>
+        <div class="loginforms">
 
 
-    <form class="login-box" action="/auth/login" method="POST" id="form-container">
 
-      <h2 class="main-title">Kitchen Hack</h2>
+          <form class="login-box" action="/auth/login" method="POST" id="form-container">
 
-      <label class="username" for="username">Username</label><br>
-      <input class="username" id="username" type="text" name="username" placeholder="Username">
+            <h2 class="main-title">Kitchen Hack</h2>
 
-      <br><br>
+            <label class="username" for="username">Username</label><br>
+            <input class="username" id="username" type="text" name="username" placeholder="Username">
 
-      <label class="password" for="password">Password</label> <br>
-      <input class="password" id="password" type="password" name="password" placeholder="Password">
-      <br>
-      {{#if message }}
-      <div class="error-message">{{ message }}</div>
-      {{/if}}
+            <br><br>
 
-      <br>
-      <button class="login-btn">Login</button>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+            <label class="password" for="password">Password</label> <br>
+            <input class="password" id="password" type="password" name="password" placeholder="Password">
+            <br>
+            {{#if message }}
+            <div class="error-message">{{ message }}</div>
+            {{/if}}
 
-      <p class="account-message">
-        Don't have an account yet?
-        <a href="/auth/signup">Sign up!</a>
-      </p>
-    </form>
+            <br>
+            <button class="login-btn">Login</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <p class="account-message">
+              Don't have an account yet?
+              <a href="/auth/signup">Sign up!</a>
+            </p>
+          </form>
+        </div>
+
+      </section>
+
+    </div>
   </div>
+</div>
 
-</section>
 
 {{!-- <div class="login-signup">
 

@@ -26,7 +26,9 @@ const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/User");
 const Recipe = require('./models/Recipe'); 
 
-const feather = require('feather-icons')
+const feather = require('feather-icons');
+
+const uri = process.env.MONGODB_URI;
 
 
     
