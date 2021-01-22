@@ -51,21 +51,21 @@ router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
 }); 
 
 
-// router.get('/ingredients/remove/:ingredient', (req, res) => {
-//   const ingr=req.params.ingredient; 
-//   const user=req.user._id; 
+router.get('/ingredients/remove/:ingredient', (req, res) => {
+  const ingr=req.params.ingredient; 
+  const user=req.user._id; 
 
-//   console.log(`${ingr} removed for user ${user}.`); 
+  console.log(`${ingr} removed for user ${user}.`); 
 
-//   User.findByIdAndUpdate(
-//     user, 
-//     { $pull: {"shoppingList": {name:ingr}}}
-//   ).then(() => {
-//     res.redirect('/shoppingList')
-//   }).catch(err => {
-//     console.log(err)
-//   })
-// }); 
+  User.findByIdAndUpdate(
+    user, 
+    { $pull: {"shoppingList": {name:ingr}}}
+  ).then(() => {
+    res.redirect('/shoppingList')
+  }).catch(err => {
+    console.log(err)
+  })
+}); 
 
 
 
