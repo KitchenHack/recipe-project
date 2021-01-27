@@ -31,6 +31,11 @@ const feather = require('feather-icons');
 
 const uri = process.env.MONGODB_URI;
 
+mongoose.set('useFindAndModify', false);
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
 
     
 

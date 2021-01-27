@@ -15,6 +15,11 @@ const User = require('../models/User');
 const Recipe = require('../models/Recipe'); 
 const mongoose = require('mongoose'); 
 const ensureLogin = require("connect-ensure-login");
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
 // const swiped = require('swiped'); 
 
 //when I want to render the page from the nav bar
