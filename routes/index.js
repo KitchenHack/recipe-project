@@ -7,9 +7,9 @@ const ensureLogin = require("connect-ensure-login");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  console.log(req.user)
+  console.log(req.user);
   if(req.user){
-    res.redirect("/allRecipes")
+    res.redirect("/allRecipes");
   }
   else{
     res.render("auth/login");
@@ -70,10 +70,10 @@ router.get("/allRecipes", ensureLogin.ensureLoggedIn(), (req, res) => {
 router.get('/addRecipe', ensureLogin.ensureLoggedIn(), (req, res) => {
   const user=req.user; 
   User.find().then(usersFromDB => {
-    res.render('addRecipe', {users: usersFromDB, user: user})
+    res.render('addRecipe', {users: usersFromDB, user: user});
   }).catch(err => {
     console.log(err); 
-  })
+  });
 }); 
 
 //needed: post route to create new recipe 
@@ -91,7 +91,7 @@ router.post('/addRecipe', (req, res) => {
     res.redirect('/allRecipes'); 
   }).catch(err => {
     console.log(err); 
-  })
+  });
 }); 
 
 //see shopping list for chosen recipe, imported from Annas code
@@ -111,7 +111,7 @@ router.get('/allRecipes/:recipeId', (req, res, next) => {
     res.render('recipeDetails', {recipe: recipe, user}); 
   }).catch(err => {
     console.log(err); 
-  })
+  });
 }); 
 
 
