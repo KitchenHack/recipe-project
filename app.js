@@ -48,7 +48,7 @@ client.connect(err => {
     
 
 mongoose
-  .connect('mongodb://localhost/recipe-project', {
+  .connect('mongodb://localhost/kitchen-hack', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
