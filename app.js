@@ -31,37 +31,41 @@ const feather = require('feather-icons');
 
 // const uri = process.env.MONGODB_URI;
 
-const db = require('./config/keys').MongoURI;
+const db = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopology: true });
 
-
+mongoose.connect(uri, { dbName: kitchen-hack })
+  .then( () => {
+    console.log('Connection to the Atlas Cluster is successful!')
+  })
+  .catch( (err) => console.error(err));
 
 
 
     
 
-mongoose
-  .connect(db, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
+// mongoose
+//   .connect(db, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//     useCreateIndex: true
 
-  })
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err);
-  });
+//   })
+//   .then(x => {
+//     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
+//   })
+//   .catch(err => {
+//     console.error('Error connecting to mongo', err);
+//   });
 
-  client.connect(err => {
-    const collection = client.db("kitchen-hack").collection("devices");
-    // perform actions on the collection object
-    client.close();
-  });
+//   client.connect(err => {
+//     const collection = client.db("kitchen-hack").collection("devices");
+//     // perform actions on the collection object
+//     client.close();
+//   });
 
   
 const app_name = require('./package.json').name;
