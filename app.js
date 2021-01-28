@@ -31,15 +31,10 @@ const feather = require('feather-icons');
 
 // const uri = process.env.MONGODB_URI;
 
-
+const db = require('./config/keys').MongoURI;
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
 
 
 
@@ -48,7 +43,7 @@ client.connect(err => {
     
 
 mongoose
-  .connect('mongodb://localhost/kitchen-hack', {
+  .connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -62,6 +57,13 @@ mongoose
     console.error('Error connecting to mongo', err);
   });
 
+  client.connect(err => {
+    const collection = client.db("kitchen-hack").collection("devices");
+    // perform actions on the collection object
+    client.close();
+  });
+
+  
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 

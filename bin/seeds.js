@@ -7,10 +7,14 @@ const User = require("../models/User");
 const Recipe = require('../models/Recipe'); 
 // const uri = process.env.MONGODB_URI;
 
-
+const db = require('./config/keys').MongoURI;
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopology: true });
+
+
+
+
 client.connect(err => {
   const collection = client.db("kitchen-hack").collection("devices");
   // perform actions on the collection object
@@ -23,7 +27,7 @@ client.connect(err => {
 const bcryptSalt = 10;
 
 mongoose
-  .connect(process.env.MONGODB_URI ||'mongodb://localhost/kitchen-hack', {useNewUrlParser: true}, {useFindAndModify: true}, {useCreateIndex: true}, {useUnifiedTopology: true} )
+  .connect(process.env.MONGODB_URI || db, {useNewUrlParser: true}, {useFindAndModify: true}, {useCreateIndex: true}, {useUnifiedTopology: true} )
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
