@@ -6,15 +6,11 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const Recipe = require('../models/Recipe'); 
 
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
 
 const bcryptSalt = 10;
 
 mongoose
-  .connect(process.env.MONGODB_URI ||'mongodb://localhost/recipe-project', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI ||'mongodb://localhost/recipe-project', {useNewUrlParser: true}, {useFindAndModify: true}, {useCreateIndex: true}, {useUnifiedTopology: true} )
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

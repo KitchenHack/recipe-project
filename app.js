@@ -31,10 +31,7 @@ const feather = require('feather-icons');
 
 const uri = process.env.MONGODB_URI;
 
-mongoose.set('useFindAndModify', false);
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
+
 
 
     
@@ -42,7 +39,10 @@ mongoose.set('useUnifiedTopology', true);
 mongoose
   .connect('mongodb://localhost/recipe-project', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+
   })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
