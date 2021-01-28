@@ -27,7 +27,7 @@ client.connect(err => {
 
 const bcryptSalt = 10;
 
-mongoose.connect(uri, { dbName: kitchen-hack })
+mongoose.connect("mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority")
   .then( () => {
     console.log('Connection to the Atlas Cluster is successful!')
   })

@@ -36,7 +36,7 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopology: true });
 
-mongoose.connect(uri, { dbName: kitchen-hack })
+mongoose.connect("mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority")
   .then( () => {
     console.log('Connection to the Atlas Cluster is successful!')
   })
