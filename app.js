@@ -29,7 +29,18 @@ const Recipe = require('./models/Recipe');
 
 const feather = require('feather-icons');
 
-const uri = process.env.MONGODB_URI;
+// const uri = process.env.MONGODB_URI;
+
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://annawein:annawein@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
 
 
 

@@ -5,6 +5,18 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const Recipe = require('../models/Recipe'); 
+// const uri = process.env.MONGODB_URI;
+
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://annawein:annawein@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
 
 
 const bcryptSalt = 10;
