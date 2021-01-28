@@ -27,11 +27,12 @@ client.connect(err => {
 
 const bcryptSalt = 10;
 
-mongoose.connect("mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/recipe-project", { useNewUrlParser: true }, { useUnifiedTopology: true } )
   .then( () => {
     console.log('Connection to the Atlas Cluster is successful!')
   })
   .catch( (err) => console.error(err));
+
 
 // mongoose
 //   .connect(process.env.MONGODB_URI || db, {useNewUrlParser: true}, {useFindAndModify: true}, {useCreateIndex: true}, {useUnifiedTopology: true} )
