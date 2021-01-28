@@ -16,23 +16,20 @@ const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopol
 
 
 
-client.connect(err => {
-  const collection = client.db("kitchen-hack").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
 
 
 
 
 const bcryptSalt = 10;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/recipe-project", { useNewUrlParser: true }, { useUnifiedTopology: true } )
+mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true }, { useUnifiedTopology: true } )
   .then( () => {
     console.log('Connection to the Atlas Cluster is successful!')
   })
   .catch( (err) => console.error(err));
 
+
+  
 
 // mongoose
 //   .connect(process.env.MONGODB_URI || db, {useNewUrlParser: true}, {useFindAndModify: true}, {useCreateIndex: true}, {useUnifiedTopology: true} )
