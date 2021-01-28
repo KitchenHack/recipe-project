@@ -9,8 +9,8 @@ const Recipe = require('../models/Recipe');
 
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://annawein:annawein@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
+const uri = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
