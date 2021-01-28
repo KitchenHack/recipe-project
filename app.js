@@ -33,7 +33,7 @@ const feather = require('feather-icons');
 
 const db = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitchen-hack?retryWrites=true&w=majority";
+const uri = "mongodb://annabanana:annabanana@cluster0-shard-00-00.mji2z.mongodb.net:27017,cluster0-shard-00-01.mji2z.mongodb.net:27017,cluster0-shard-00-02.mji2z.mongodb.net:27017/kitchen-hack?ssl=true&replicaSet=atlas-htpxrz-shard-0&authSource=admin&retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopology: true });
 
 mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true }, { useUnifiedTopology: true } )
