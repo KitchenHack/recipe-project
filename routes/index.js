@@ -6,6 +6,10 @@ const ensureLogin = require("connect-ensure-login");
 
 
 /* GET home page */
+
+
+
+/* GET home page */
 router.get("/", (req, res, next) => {
   console.log(req.user);
   if(req.user){
@@ -15,6 +19,16 @@ router.get("/", (req, res, next) => {
     res.render("auth/login");
   }
 });
+
+// router.get("/", (req, res, next) => {
+//   console.log(req.user);
+//   if(req.user){
+//     res.redirect("/allRecipes");
+//   }
+//   else{
+//     res.render("auth/login");
+//   }
+// });
 
 // router.get('/', (req, res, next) => {
 //   console.log("this is the user?", req.user)

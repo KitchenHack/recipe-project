@@ -3,7 +3,7 @@
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const "User" = require("../models/"User"");
+const User = require("../models/User");
 const Recipe = require('../models/Recipe'); 
 // const uri = process.env.MONGODB_URI;
 
@@ -13,18 +13,11 @@ const uri = "mongodb+srv://annabanana:annabanana@cluster0.mji2z.mongodb.net/kitc
 const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopology: true });
 
 
-
-
-
-
-
-
-
 const bcryptSalt = 10;
 
 mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true }, { useUnifiedTopology: true } )
   .then( () => {
-    console.log('Connection to the Atlas Cluster is successful!')
+    console.log('Connection to the Atlas Cluster is successful!');
   })
   .catch( (err) => console.error(err));
 
@@ -40,17 +33,18 @@ mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true }, { us
 //     console.error('Error connecting to mongo', err)
 //   });
 
-const "user"s = [
+const users = [
   {
-    "user"name: "alice",
+    username: "alice",
     password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
 
   },
   {
-    "user"name: "bob",
+    username: "bob",
     password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
   }
-]
+];
+
 
 // "User".deleteMany()
 // .then(() => {
@@ -213,7 +207,7 @@ const recipes=[
     ], 
     "duration": 45, 
     image: "/images/recipe5.jpg", 
-    "description": "Line an 8-inch square baking pan with parchment paper or wax paper. Set aside. Make the Peanut Butter Oat Bars: In a medium, microwave-safe bowl (large enough to add oats later), add peanut butter and maple syrup. Whisk together until well-mixed. Heat in 20-second increments in the microwave until warm, fragrant and thickened. Whisk in between heating increments. Add oats. Stir and fold until thoroughly combined. Pour this mixture into the prepared baking pan. Using a rubber spatula, smooth into an even, tightly-packed layer. Set aside. Make the Vegan Chocolate Topping: Use the double boiler method or do the following. In a medium, microwave-safe bowl, add Chocolate Topping "ingredients". Heat in 20-second increments until softened and melted. Stir until smooth. Pour this chocolate mixture over the bars. Using a clean rubber spatula, smooth into an even layer. Freeze for 30-40 minutes, or until firm. Remove from freezer and slice into 16 bars. Enjoy!", 
+    "description": "Line an 8-inch square baking pan with parchment paper or wax paper. Set aside. Make the Peanut Butter Oat Bars: In a medium, microwave-safe bowl (large enough to add oats later), add peanut butter and maple syrup. Whisk together until well-mixed. Heat in 20-second increments in the microwave until warm, fragrant and thickened. Whisk in between heating increments. Add oats. Stir and fold until thoroughly combined. Pour this mixture into the prepared baking pan. Using a rubber spatula, smooth into an even, tightly-packed layer. Set aside. Make the Vegan Chocolate Topping: Use the double boiler method or do the following. In a medium, microwave-safe bowl, add Chocolate Topping ingredients. Heat in 20-second increments until softened and melted. Stir until smooth. Pour this chocolate mixture over the bars. Using a clean rubber spatula, smooth into an even layer. Freeze for 30-40 minutes, or until firm. Remove from freezer and slice into 16 bars. Enjoy!", 
     "dishType": "Dessert",
   }, 
   {
@@ -427,23 +421,23 @@ const recipes=[
 // }); 
 
 async function uploadSeeds() {
-  console.log("Seeds are uploaded! "User"s and Recipes are deleted and imported again from seeds.js")
+  console.log("Seeds are uploaded! Users and Recipes are deleted and imported again from seeds.js");
   const promises = []; 
-  const delete"User"s = await "User".deleteMany(); 
+  const deleteUsers = await User.deleteMany(); 
 
   const deleteRecipes = await Recipe.deleteMany(); 
-  for (let "user" of "user"s) {
-    const "user"Created = await "User".create("user"); 
+  for (let user of users) {
+    const userCreated = await User.create(user); 
     for (let recipe of recipes) {
-      if ("user"."user"name === recipe."user") {
-        recipe."user"_id = "user"Created._id; 
+      if (user.username === recipe.user) {
+        recipe.user_id = userCreated._id; 
         const recipeCreated = await Recipe.create(recipe); 
         promises.push(recipeCreated); 
       }
     }
   }
   Promise.all(promises).then((response) => {
-    "User".find().then((response) => {
+    User.find().then((response) => {
       mongoose.disconnect(); 
     }); 
   }); 
