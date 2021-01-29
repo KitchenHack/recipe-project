@@ -6,7 +6,7 @@
 
 <section class="signup">
 
-  <div id="iconsandstuff">
+  <div idName="iconsandstuff">
 
 
 
@@ -18,15 +18,15 @@
     <br>
     
     <br><br><br>
-    <form action="/auth/signup" method="POST" id="form-container">
+    <form action="/auth/signup" method="POST" idName="form-container">
     <h2 class="main-title">Kitchen Hack</h2>
       <label class="username" for="username">Username</label><br>
-      <input class="username" id="username" type="text" name="username" placeholder="choose a username">
+      <input class="username" idName="username" type="text" name="username" placeholder="choose a username">
 
      <br><br>
 
       <label class="password" for="password">Password</label><br>
-     <input class="password" id="password" type="password" name="password" placeholder="choose a password">
+     <input class="password" idName="password" type="password" name="password" placeholder="choose a password">
      <br>
       {{#if message }}
        <div class="error-message">{{ message }}</div>
