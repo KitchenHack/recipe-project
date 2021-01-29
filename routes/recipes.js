@@ -41,7 +41,7 @@ router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
     return {quantity:part[0], measure:part[1], name:part.slice(2).join(" ")}
   })
 
-  User.findByIdAndUpdateOne(
+  User.findByIdAndUpdate(
     user, 
  { $push:{shoppingList: list}}
 ).then(list => {   
@@ -59,7 +59,7 @@ router.get('/ingredients/remove/:ingredient', (req, res) => {
 
   console.log(`${ingr} removed for user ${user}.`); 
 
-  User.findByIdAndUpdateOne(
+  User.findByIdAndUpdate(
     user, 
     { $pull: {"shoppingList": {name:ingr}}}
   ).then(() => {
@@ -81,7 +81,7 @@ router.post('/shoppingList/update', (req, res) => {
   }); 
   // const list ={name:req.body.name, measure: req.body.measure[index], quantity: req.body.quantity[index]}
   console.log(list)
-  User.findByIdAndUpdateOne(
+  User.findByIdAndUpdate(
     user, 
     {"shoppingList": list}
     ).then(()=> {res.redirect('/shoppingList')
@@ -103,7 +103,7 @@ router.post('/shoppingList/updateWithAdditionalItem', (req, res) => {
   //   return {name:nameOfIng, measure: req.body.measure[index], quantity: req.body.quantity[index]}
   // }); 
   // console.log(list)
-  User.findByIdAndUpdateOne(
+  User.findByIdAndUpdate(
     user, 
     { $push: {shoppingList: list}}, { new: true}
     ).then((findedUser)=> {
