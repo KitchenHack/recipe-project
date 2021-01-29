@@ -1,0 +1,19 @@
+{
+  "user": "Sir Stabington", 
+  "title": "5-ingredient balsamic roasted tofu and vegetables", 
+  "ingredients": [
+    {"name": "Balsamic vinegar", "quantity": 80, "measure":"ml"},
+    {"name": "Firm tofu", "quantity": 250, "measure": "g"},
+    {"name": "Soy sauce", "quantity": 150, "measure": "ml"},
+    {"name": "Sweet potatoes", "quantity": 300, "measure": "g"},
+    {"name": "Broccoli", "quantity": 10, "measure": "florets"},
+    {"name": "Scallion", "measure": ""},
+    {"name": "Sesame seed", "measure": ""},
+    {"name": "Short grain rice", "measure": ""},
+    {"name": "Vegetable oil", "measure": ""}
+  ], 
+  "duration": 55, 
+  "image": "/images/recipe20.jpg", 
+  "description": "Pat tofu dry with paper towels and slice into planks approx. 2 cm /½-in. thick. Add balsamic vinegar, soy sauce, and a pinch of sugar to a bowl and mix to combine. Transfer tofu planks to a deep plate, then pour the vinegar and soy sauce mixture over the top. Cover with plastic wrap, transfer to the fridge, and let marinate for at least 30 min., or up to 8 hrs. While the tofu is marinating, peel and cube the sweet potato. Cut broccoli into florets, peeling and cubing the stem. Preheat the oven to 200°C/400°F convection. Transfer marinated tofu planks to a parchment-lined baking sheet, and add leftover marinade to a small saucepan. They should have plenty of space around them and shouldn’t be touching or overlapping. On the other half of the baking sheet, add the sweet potato. Season with some oil, salt, and pepper. Bake for approx. 20 min. in the middle rack of the oven. Remove the baking sheet, toss the sweet potato with a spatula, and make some room for the broccoli on that half of the baking sheet. Season broccoli with some oil, salt, and pepper, then return the baking sheet to the oven and bake for approx. 20 min. or until sweet potato and broccoli are slightly charred. Place the saucepan of leftover marinade over medium heat and bring to a simmer. Let simmer and reduce, swirling often, until thickened slightly, approx. 2 min. Remove from heat. Serve the tofu and vegetables over rice, if desired, and garnish with sauce, sliced scallions, and sesame seeds. Enjoy!", 
+  "dishType": "Main"
+}
