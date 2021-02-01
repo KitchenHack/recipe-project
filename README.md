@@ -3,13 +3,18 @@
 
 Kitchen Hack is a project that I started during an intensive 9-week coding bootcamp. After bootcamp, I remodeled the front-end and did some back-end work with the database. 
 
+>Log in or Sign up 
+
 >![](kitchen-hack-screenshot-border-login.jpg)
-><br/>
-><br/>
+
+>Find a recipe you like
+
 >![](kitchen-hack-screenshot-border-recipes.jpg)
-><br/>
-><br/>
+
+>View instructions & add ingredients to your shopping list
+
 >![](kitchen-hack-screenshot-border-recipe-item.jpg)
-><br/>
-><br/>
+
+>Check off ingredients that you have
+
 >![](kitchen-hack-screenshot-border-shopping-list.jpg)
