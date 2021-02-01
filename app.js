@@ -38,7 +38,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true }, { useUnifiedTopol
 
 mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true }, { useUnifiedTopology: true } )
   .then( () => {
-    console.log('Connection to the Atlas Cluster is successful!')
+    console.log('Connection to the Atlas Cluster is successful!');
   })
   .catch( (err) => console.error(err));
 
@@ -46,26 +46,26 @@ mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true }, { us
 
     
 
-// mongoose
-//   .connect(db, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useFindAndModify: false,
-//     useCreateIndex: true
+mongoose
+  .connect(db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
 
-//   })
-//   .then(x => {
-//     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
-//   })
-//   .catch(err => {
-//     console.error('Error connecting to mongo', err);
-//   });
+  })
+  .then(x => {
+    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
+  })
+  .catch(err => {
+    console.error('Error connecting to mongo', err);
+  });
 
-//   client.connect(err => {
-//     const collection = client.db("kitchen-hack").collection("devices");
-//     // perform actions on the collection object
-//     client.close();
-//   });
+  client.connect(err => {
+    const collection = client.db("kitchen-hack").collection("devices");
+    // perform actions on the collection object
+    client.close();
+  });
 
   
 const app_name = require('./package.json').name;
@@ -91,7 +91,7 @@ passport.deserializeUser((id, cb) => {
 });
  
 passport.use(new LocalStrategy((username, password, next) => {
-  User.find({ username }, (err, user) => {
+  User.findOne({ username }, (err, user) => {
     if (err) {
       return next(err);
     }
@@ -105,6 +105,7 @@ passport.use(new LocalStrategy((username, password, next) => {
     return next(null, user);
   });
 }));
+
 
 
 app.use(express.static(path.join(__dirname, 'public')));

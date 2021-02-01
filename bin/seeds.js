@@ -421,7 +421,7 @@ const recipes=[
 // }); 
 
 async function uploadSeeds() {
-  console.log("Seeds are uploaded! Users and Recipes are deleted and imported again from seeds.js");
+  console.log("Seeds are uploaded! Users and Recipes are deleted and imported again from seeds.js")
   const promises = []; 
   const deleteUsers = await User.deleteMany(); 
 
