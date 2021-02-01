@@ -2,7 +2,8 @@
 ***Express - MongoDB - JavaScript - ES6 - Node.js - CSS - HTML***
 <br/>
 <br/>
-Kitchen Hack is a project that I started during an intensive 9-week coding bootcamp. After bootcamp, I remodeled the front-end and did some back-end work with the database. 
+
+>Kitchen Hack is a project that I started during an intensive 9-week coding bootcamp. After bootcamp, I remodeled the front-end and did some back-end work with the database. 
 
 ![](kitchen-hack-screenshot-border-login.jpg)
 <br/>
