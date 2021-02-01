@@ -11,7 +11,7 @@ Kitchen Hack is a project that I contributed to during an intensive 9-week codin
 >
 >![](kitchen-hack-screenshot-border-recipes.jpg)
 >
-> #### View instructions & add ingredients to your shopping list
+> #### View cooking instructions & add ingredients to your shopping list
 >
 >![](kitchen-hack-screenshot-border-recipe-item.jpg)
 >
