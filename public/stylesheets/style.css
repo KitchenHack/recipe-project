@@ -468,14 +468,15 @@ padding: 10px;
 .to-add-item {
   align-items: flex-start;
   flex-direction: row;
-  height: 50px;
+  height: 55px;
   background-color: ghostwhite;
 }
 
 .to-add-item input {
   border: none;
   outline-width: 0;
-  height: 50px;
+  outline: 0 !important;
+  height: 45px;
   background-color: ghostwhite;
 }
 
@@ -494,7 +495,7 @@ padding: 10px;
 }
 
 .to-add-item button:active {
-  height: 50px;
+  height: 53px;
   color: darkgray;
   background-color: ghostwhite;
   text-decoration: none;
